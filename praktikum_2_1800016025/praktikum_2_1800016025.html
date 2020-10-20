@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My first Canvas App_1800016025</title>
+
+	<style type="text/css">
+		canvas {
+		background-color: #ccc;
+		};
+	</style>
+
+</head>
+<body>
+	<canvas width="800px" height="450px" id="canvas"></canvas>
+	<script type="text/javascript">
+		var c = document.getElementById('canvas');
+		var ctx = c.getContext('2d');
+
+		//MEMBUAT OBYEK LINGKARAN
+		ctx.beginPath();
+		ctx.arc(400, 225, 120, 0, 2 * Math.PI);
+		ctx.fillStyle = "#aa0000";
+		ctx.fill();
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(400, 225, 80, 0, 2 * Math.PI);
+		// - ctx.arc(x, y, r, sudutAwal, sudutAkhir, arah);
+		// - x menentukan koordinat Objek yang akan di buat ke sumbu X
+		// - y menentukan koordinat Objek yang akan di buat ke sumbu Y
+		// - r menentukan jari-jari lingkaran yang akan di buat
+		// - sudutAwal dengan satuan radian ( 0 radian berarti dimulai dari arah jam 3 )
+		// - sudutAkhir dengan satuan radian
+		// - arah dalam penggambaran lingkaran seperti di contoh arahnya adalah 2 *Math.PI maka lingkaran yang akan di buat berbentuk 360 derajat atau lingkaran utuh.
+		// - untuk pewarnaan bisa menggunakan syntax fillStyle ( menggunakan pewarnaan RGB )
+		ctx.fillStyle = "#dab420";
+		ctx.fill();
+		ctx.stroke();
+		
+
+		//MEMBUAT OBYEK PERSEGI
+		ctx.beginPath();
+		ctx.lineWidth = "5"; //lineWidth untuk menentukan tebal tipisnya outline dari persegi yang akan di buat
+		ctx.strokeStyle = "white"; //strokeStyle untuk menentukan warna dari outlinenya ( menggunakan pewarnaan RGB
+		ctx.rect(350, 170, 100, 100); //(sumbuX, sumbuY, lebar, tinggi)
+		ctx.fillStyle = "#6495ed"; //untuk menentukan warna dari persegi yang akan di buat
+		ctx.fill();
+		ctx.stroke();
+
+		ctx.beginPath();
+			ctx.moveTo(650, 130);
+			ctx.lineTo(650, 320);
+			ctx.lineTo(750, 230);
+			ctx.closePath();
+			ctx.fillStyle = "#aab001";
+			ctx.fill();
+			ctx.beginPath();
+			ctx.moveTo(150, 130);
+			ctx.lineTo(150, 320); //Untuk menggambar garis dari titik awal ke titik ke-dua,
+			ctx.lineTo(50, 230); //Untuk menggambar garis dari titik kedua ke titik ketiga
+			ctx.closePath(); //Untuk menghubungkan garis dari titik awal ke titik akhir.
+			ctx.fillStyle = "#aab001";
+			ctx.fill();
+
+	</script>
+</body>
+</html>
